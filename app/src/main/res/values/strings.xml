@@ -1,5 +1,13 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Записная книжка</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="category_title">Добавление новой категории</string>
+    <string name="category_button_add">Добавить</string>
+    <string name="category_name_hint">Название категории</string>
+    <string name="itemTitle">Title</string>
+    <string name="itemContent">Content</string>
+    <string name="write_titleHint">Название</string>
+    <string name="addActivity">Creating new write</string>
+    <string name="write_contentHint">Описание</string>
 </resources>
