@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Category_add">
+    android:background="@color/grey"
+    tools:context=".database.Category.Category_add">
 
     <TextView
         android:id="@+id/textView2"
@@ -23,10 +24,10 @@
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_margin="40sp"
-        android:background="@android:drawable/editbox_background_normal"
+        android:background="@drawable/edit_style"
+        android:inputType="text|textCapSentences"
         android:ems="10"
         android:hint="@string/category_name_hint"
-        android:inputType="textPersonName"
         android:paddingLeft="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,6 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
+        android:background="@color/create"
         android:text="@string/category_button_add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,10 +1,15 @@
 package com.example.notepad.database
 
+import android.graphics.Color
 import android.provider.BaseColumns
+
 
 object Cloud{
 
-    const val DATABASE_VERSION = 1
+    const val COLOR_CREATE = "#3FC180"
+    const val COLOR_UPDATE = "#ED991C"
+
+    const val DATABASE_VERSION = 2
     const val DATABASE_NAME = "database.db"
 
     const val TABLE_CATEGORIES = "categories"

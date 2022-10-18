@@ -19,7 +19,7 @@
             android:name=".ActivityWrite"
             android:exported="false" />
         <activity
-            android:name=".Category_add"
+            android:name=".database.Category.Category_add"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

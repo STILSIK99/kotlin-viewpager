@@ -14,6 +14,7 @@ import com.example.notepad.database.Write.WriteAdapter
 import com.example.notepad.database.Write.WriterViewModel
 import kotlinx.android.synthetic.main.fragment_number.*
 import androidx.lifecycle.Observer
+import com.example.notepad.database.Cloud
 
 class NumberFragment(val contextF: Context) : Fragment() {
     var id_cate: Int = 0
@@ -49,9 +50,13 @@ class NumberFragment(val contextF: Context) : Fragment() {
         recycleView.adapter = adapter
         writerViewModel.listWrites.observe(this, Observer {
             it?.let {
-                adapter.refreshSubjects(it)
+                adapter.refreshWrites(it)
             }
         })
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        dbManager.close()
+    }
 }

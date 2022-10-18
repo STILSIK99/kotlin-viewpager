@@ -1,9 +1,13 @@
-package com.example.notepad
+package com.example.notepad.database.Category
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.notepad.Intents
+import com.example.notepad.MainActivity
+import com.example.notepad.R
 import com.example.notepad.database.Cloud
 import com.example.notepad.database.DataBaseManager
 import kotlinx.android.synthetic.main.activity_category_add.*
@@ -17,6 +21,7 @@ class Category_add : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_category_add)
 
+        button_add.setBackgroundColor(Color.parseColor(Cloud.COLOR_CREATE))
         button_add.setOnClickListener{
             if (edName.text.toString() == ""){
                 Toast.makeText(this,
@@ -37,8 +42,15 @@ class Category_add : AppCompatActivity() {
 //                        edContent.text.toString()
 //                    )
             }
-            val mainIntent = Intent(this,  MainActivity::class.java)
+            val mainIntent = Intent(this,  MainActivity::class.java).apply {
+                putExtra(Intents.ACTION, Intents.ACTION )
+            }
             startActivity(mainIntent)
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        dbManager.close()
     }
 }

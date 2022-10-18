@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#D1CBCB</color>
     <color name="item_color">#41ADE3</color>
+    <color name="create">#3FC180</color>
+    <color name="update">#ED991C</color>
+    <color name="delete">#E64F4F</color>
 </resources>

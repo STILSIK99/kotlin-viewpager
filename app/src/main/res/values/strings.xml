@@ -8,6 +8,7 @@
     <string name="itemTitle">Title</string>
     <string name="itemContent">Content</string>
     <string name="write_titleHint">Название</string>
-    <string name="addActivity">Creating new write</string>
+    <string name="createWriteAct">Создание записи</string>
+    <string name="updateWriteAct">Изменение записи</string>
     <string name="write_contentHint">Описание</string>
 </resources>

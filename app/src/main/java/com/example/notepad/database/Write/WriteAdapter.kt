@@ -1,10 +1,13 @@
 package com.example.notepad.database.Write
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.notepad.ActivityWrite
+import com.example.notepad.Intents
 import com.example.notepad.R
 
 import kotlinx.android.synthetic.main.item_layout.view.*
@@ -17,7 +20,11 @@ class WriteAdapter(var contextA: Context) : RecyclerView.Adapter<WriteAdapter.Wr
             itemTitle.text = write.title
             itemContent.text = write.content
             itemView.setOnClickListener{
-                //при нажатии на элемент открывается окно с редактированием
+                val changeIntent = Intent(contextH, ActivityWrite::class.java).apply {
+                    putExtra(Intents.ID_CATE, write.id_cate)
+                    putExtra(Intents.ID_WRITE, write.id)
+                }
+                contextH.startActivity(changeIntent)
             }
         }
     }
@@ -35,7 +42,7 @@ class WriteAdapter(var contextA: Context) : RecyclerView.Adapter<WriteAdapter.Wr
         return writes.size
     }
 
-    fun refreshSubjects(writes : List<Write>){
+    fun refreshWrites(writes : List<Write>){
         this.writes = writes
         notifyDataSetChanged()
     }

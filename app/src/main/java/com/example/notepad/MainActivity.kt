@@ -4,13 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
+import com.example.notepad.database.Category.Category_add
 import com.example.notepad.database.Cloud
 import com.example.notepad.database.DataBaseManager
-import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_write.*
 
 class MainActivity : AppCompatActivity() {
     val dbManager = DataBaseManager(this)
@@ -34,6 +32,12 @@ class MainActivity : AppCompatActivity() {
         startActivity(addCateIntent)
     }
 
+    fun deleteCategory(view: View){
+        val id_cate = adapter.listCate[tabLayout.selectedTabPosition].id
+        dbManager.deleteData(Cloud.TABLE_CATEGORIES, id_cate)
+        loadResourses()
+    }
+
     fun loadResourses(){
         dbManager?.let{
             adapter.listCate = dbManager.readListCategories()
@@ -52,6 +56,12 @@ class MainActivity : AppCompatActivity() {
                     if (id_cate != adapter.listCate[i].id) continue
                     tabLayout.selectTab(tabLayout.getTabAt(i))
                     break
+                }
+            }
+            if(intent.hasExtra(Intents.ACTION)){
+                val action = intent.getStringExtra(Intents.ACTION) ?: ""
+                if (action == Intents.ACTION){
+                    tabLayout.selectTab(tabLayout.getTabAt(tabLayout.tabCount - 1))
                 }
             }
         }

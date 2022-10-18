@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,11 +10,11 @@
         android:id="@+id/tabLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
         app:tabIndicatorColor="@color/teal_200"
         app:tabIndicatorHeight="4dp"
         app:tabMode="scrollable"
@@ -30,21 +29,35 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="40dp"
-        android:layout_height="35dp"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
         android:layout_margin="8dp"
-        android:background="@color/grey"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/create"
         android:onClick="newCategory"
         android:padding="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/pager"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imageButton2"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_add_foreiground"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_margin="8dp"
+        android:layout_marginStart="16dp"
+        android:background="@color/delete"
+        android:onClick="deleteCategory"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_cate_delete_foreground" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
